@@ -28,8 +28,7 @@
 const express = require('express');
 const crypto = require('crypto');
 const bcrypt = require('bcryptjs');
-const db = require('../db');
-
+const { pool: db } = require('../db');
 const router = express.Router();
 
 const hashCode = (code) =>
