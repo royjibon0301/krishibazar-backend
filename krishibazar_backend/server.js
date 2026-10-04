@@ -9,6 +9,7 @@ app.use(express.json());
 
 app.get('/', (req, res) => res.json({ status: 'KrishiBazar API running' }));
 app.use('/auth', require('./routes/auth'));
+app.use('/auth', require('./routes/passwordReset'));
 app.use('/products', require('./routes/products'));
 app.use('/orders', require('./routes/orders'));
 app.use('/admin', require('./routes/admin'));
