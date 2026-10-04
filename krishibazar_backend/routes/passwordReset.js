@@ -133,7 +133,7 @@ router.post('/reset-password', async (req, res) => {
     }
 
     const hashed = await bcrypt.hash(newPassword, 10);
-    await db.query('UPDATE users SET password = ? WHERE email = ?', [hashed, email]);
+    await db.query('UPDATE users SET password_hash = ? WHERE email = ?', [hashed, email]);
     await db.query('DELETE FROM password_resets WHERE email = ?', [email]);
 
     res.json({ message: 'Password updated' });
